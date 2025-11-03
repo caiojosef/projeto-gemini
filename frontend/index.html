@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gemini Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="app-shell">
+        <header class="topbar" role="banner">
+            <div class="brand">
+                <div class="logo">✨</div>
+                <div class="titles">
+                    <h1>Gemini Assistant</h1>
+                    <p class="subtitle">Faça uma pergunta e receba a resposta da IA</p>
+                </div>
+            </div>
+            <nav class="actions" aria-label="Links rápidos">
+                <a class="pill" href="#" onclick="window.location.reload()">Reiniciar</a>
+            </nav>
+        </header>
+
+        <main class="main" role="main">
+            <section class="panel">
+                <div class="panel-header">
+                    <h2>Pergunta</h2>
+                    <span class="hint">Dica: peça explicações curtas, listas ou exemplos de código.</span>
+                </div>
+
+                <!-- IDs preservados -->
+                <textarea id="prompt" placeholder="Digite sua pergunta aqui..."></textarea>
+
+                <div class="controls">
+                    <button id="send" class="btn-primary">
+                        <span class="btn-icon">➤</span> Enviar
+                    </button>
+                </div>
+            </section>
+
+            <section class="panel panel-output" aria-live="polite">
+                <div class="panel-header">
+                    <h2>Resposta</h2>
+                    <span class="hint">O retorno aparece aqui formatado.</span>
+                </div>
+
+                <!-- ID preservado -->
+                <div id="response" class="response-box">
+                    <div class="placeholder">
+                        <span>💡</span>
+                        <p>Faça uma pergunta para começar. Ex.: “Explique aprendizado por reforço em 3 linhas”.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer" role="contentinfo">
+            <p>Feito com <span class="heart">♥</span> usando Node.js + API Gemini.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
