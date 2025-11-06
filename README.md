@@ -29,57 +29,33 @@ O projeto é dividido em duas partes: um **backend em Node.js/Express** e um **f
 
 ---
 
-## 📦 Estrutura do Projeto
-
-projeto-gemini/
-│
-├── backend/
-│ ├── server.js
-│ ├── package.json
-│ ├── .env
-│ └── node_modules/
-│
-└── frontend/
-├── index.html
-├── response.html
-├── style.css
-├── response.css
-├── script.js
-└── response.js
-
-yaml
-Copiar código
 
 ---
 
 ## ⚙️ Configuração e Execução
 
 ### 1️⃣ Clonar o repositório
-```bash
+
 git clone https://github.com/seu-usuario/projeto-gemini.git
 cd projeto-gemini
 2️⃣ Configurar o backend
 Entre na pasta backend e instale as dependências:
 
-bash
-Copiar código
+
 cd backend
 npm install
 Crie um arquivo .env com a sua chave do Gemini:
 
-ini
-Copiar código
+
 GEMINI_API_KEY=sua-chave-aqui
 PORT=5500
 Inicie o servidor:
 
-bash
-Copiar código
+
 npm start
 O backend será iniciado em:
 
-arduino
-Copiar código
+
 http://localhost:5500
 3️⃣ Rodar o frontend
 O frontend é totalmente estático.
@@ -106,9 +82,8 @@ O Gemini responde com o roteiro em texto Markdown;
 O frontend exibe o resultado formatado, com títulos, listas e negritos.
 
 🧩 Scripts principais
+
 Iniciar o backend
-bash
-Copiar código
 npm start
 Rodar o frontend
 Via Live Server do VS Code
@@ -117,4 +92,4 @@ Ou qualquer servidor estático (ex: npx serve frontend)
 
 📜 Licença
 Este projeto é de uso livre para fins educacionais e demonstração.
-Desenvolvido por Caio Josef Held Asam — 2025.
+Desenvolvido por Caio Josef.
