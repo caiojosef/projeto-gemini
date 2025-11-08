@@ -7,10 +7,15 @@ import { GoogleGenAI } from "@google/genai";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors());    
 app.use(express.json());
 
-// Cliente Gemini (SDK novo). Pega a chave do .env
+
+app.use((req, res, next) => {
+    console.log(`📩 ${req.method} ${req.url}`);
+    next();
+});
+
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 app.post("/api/gemini", async (req, res) => {
@@ -20,7 +25,7 @@ app.post("/api/gemini", async (req, res) => {
             return res.status(400).json({ error: "Campo 'prompt' é obrigatório." });
         }
 
-        // Modelo recomendado (rápido e estável)
+        
         const result = await ai.models.generateContent({
             model: "gemini-2.5-flash",
             contents: prompt,
@@ -35,4 +40,4 @@ app.post("/api/gemini", async (req, res) => {
 });
 
 const port = process.env.PORT || 5500;
-app.listen(port, () => console.log(`🚀 Servidor rodando em http://localhost:${port}`));
+app.listen(port, () => console.log(` Servidor rodando em http://localhost:${port}`));
